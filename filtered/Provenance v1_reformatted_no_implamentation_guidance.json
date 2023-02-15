@@ -1,0 +1,1348 @@
+{
+    "dataset": [
+        {
+            "name": "provenance",
+            "description": "<p>Version incremented from 0.8 (Provenance) to 1.1 (Provenance) in January 2023 following internal review and updates, and to match the versioning on the PRSB website.</p>",
+            "concept": [
+                {
+                    "type": "group",
+                    "minimumMultiplicity": "1",
+                    "maximumMultiplicity": "1",
+                    "mro": "M",
+                    "name": "event_record",
+                    "description": "\n                    <div>This is a record of an event performed by someone or something. An event can happen at one time and be recorded at another time.</div>\n                ",
+                    "concept": [
+                        {
+                            "type": "group",
+                            "minimumMultiplicity": "1",
+                            "maximumMultiplicity": "1",
+                            "mro": "M",
+                            "name": "author",
+                            "description": "\n                        <div>The person, professional or device recording the information in the record.</div>\n                    ",
+                            "concept": [
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "person",
+                                    "description": "\n                            <div>The person recording the information in the record.</div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "name",
+                                            "description": "The name of the person completing the record.",
+                                            "valueSets": "Free text.<br clear=\"none\"/>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "*",
+                                            "mro": "R",
+                                            "name": "relationship",
+                                            "description": "\n                        <p>The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.).</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for relationship.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available. </p>\n                        ",
+                                                    "valueSets": "\n                            <div>Free text</div>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "string",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "professional",
+                                    "description": "\n                            <div>The professional recording the information in the record. </div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "name",
+                                            "description": "The name of the professional.<br clear=\"none\"/>\n                    ",
+                                            "valueSets": "\n                        <div>Free text.<br clear=\"none\"/>\n                        </div>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string",
+                                                    "property": [
+                                                        {
+                                                            "maxLength": "70"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "role",
+                                            "description": "\n                        <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for role.</p>\n                        ",
+                                                    "valueSets": "<p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>"
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Free text</p>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "grade",
+                                            "description": "The grade of the professional.",
+                                            "valueSets": "Free text",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "specialty",
+                                            "description": "\n                        <p>The specialty of the professional e.g. physiotherapy, oncology, mental health, etc.</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for specialty.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally mandated code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available.</p>\n                        ",
+                                                    "valueSets": "\n                            <div>Free text</div>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "string",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "professional_identifier_type",
+                                            "description": "\n                        <p>The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council (NMC) numbers.</p>\n                    ",
+                                            "valueSets": "\n                        <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                    "
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "professional_identifier",
+                                            "description": "\n                        <p>Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation.</p>\n                    ",
+                                            "valueSets": "\n                        <p>Free text</p>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "organisation",
+                                            "description": "The name of the organisation the professional works for.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <div>The coded value for organisation. </div>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code list(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "device",
+                                    "description": "\n                            <div>The device <span style=\"color: #333333; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">recording the information in the record.</span></div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "device_type",
+                                            "description": "The device type. ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for device type.",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available.",
+                                                    "valueSets": "Free text.",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "device_manufacturer",
+                                            "description": "Name of the device manufacturer.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for device manufacturer.",
+                                                    "valueSets": "\n                            <div>Nationally or internationally maintained code system(s) (see implementation guidance).</div>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "model",
+                                            "description": "The model of the device.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for model.",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance)</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "software_version",
+                                            "description": "The version of software running on the device.",
+                                            "valueSets": "Free text.",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "unique_identifier",
+                                            "description": "The unique identifier for the device. ",
+                                            "valueSets": "Free text.",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "group",
+                            "minimumMultiplicity": "1",
+                            "maximumMultiplicity": "1",
+                            "mro": "M",
+                            "name": "performer",
+                            "description": "\n                        <div>The person, professional or device performing the activity in the record. </div>\n                    ",
+                            "concept": [
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "person",
+                                    "description": "\n                            <div>The person performing the activity in the record.</div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "name",
+                                            "description": "The name of the person completing the record.",
+                                            "valueSets": "Free text.<br clear=\"none\"/>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "*",
+                                            "mro": "R",
+                                            "name": "relationship",
+                                            "description": "\n                        <p>The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.).</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for relationship.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available. </p>\n                        ",
+                                                    "valueSets": "\n                            <div>Free text</div>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "string",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "professional",
+                                    "description": "\n                            <div>The professional performing the activity in the record. </div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "name",
+                                            "description": "The name of the professional.<br clear=\"none\"/>\n                    ",
+                                            "valueSets": "\n                        <div>Free text.<br clear=\"none\"/>\n                        </div>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string",
+                                                    "property": [
+                                                        {
+                                                            "maxLength": "70"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "role",
+                                            "description": "\n                        <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for role.</p>\n                        ",
+                                                    "valueSets": "<p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>"
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Free text</p>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "grade",
+                                            "description": "The grade of the professional.",
+                                            "valueSets": "Free text",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "specialty",
+                                            "description": "\n                        <p>The specialty of the professional e.g. physiotherapy, oncology, mental health, etc.</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for specialty.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally mandated code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available.</p>\n                        ",
+                                                    "valueSets": "\n                            <div>Free text</div>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "string",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "professional_identifier_type",
+                                            "description": "\n                        <p>The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council (NMC) numbers.</p>\n                    ",
+                                            "valueSets": "\n                        <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                    "
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "professional_identifier",
+                                            "description": "\n                        <p>Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation.</p>\n                    ",
+                                            "valueSets": "\n                        <p>Free text</p>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "organisation",
+                                            "description": "The name of the organisation the professional works for.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <div>The coded value for organisation. </div>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code list(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "device",
+                                    "description": "\n                            <div>The device <span style=\"color: #333333; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">recording the activity in the record.</span></div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "device_type",
+                                            "description": "The device type. ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for device type.",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available.",
+                                                    "valueSets": "Free text.",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "device_manufacturer",
+                                            "description": "Name of the device manufacturer.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for device manufacturer.",
+                                                    "valueSets": "\n                            <div>Nationally or internationally maintained code system(s) (see implementation guidance).</div>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "model",
+                                            "description": "The model of the device.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for model.",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance)</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "software_version",
+                                            "description": "The version of software running on the device.",
+                                            "valueSets": "Free text.",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "unique_identifier",
+                                            "description": "The unique identifier for the device. ",
+                                            "valueSets": "Free text.",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "group",
+                            "minimumMultiplicity": "0",
+                            "maximumMultiplicity": "1",
+                            "mro": "R",
+                            "name": "activity_location",
+                            "description": "\n                        <div>The location where the activity was performed.</div>\n                    ",
+                            "concept": [
+                                {
+                                    "type": "item",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "activity_location_type",
+                                    "description": "\n                        <p>The type of location where the activity took place.</p>\n                    ",
+                                    "valueSets": "\n                        <div>Nationally or internationally maintained code system(s) (see implementation guidance). </div>\n                    "
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "activity_location",
+                                    "description": "\n                        <p>The location where the activity took place.</p>\n                    ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "coded_value",
+                                            "description": "\n                            <p>The coded value for activity location. </p>\n                        ",
+                                            "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "free_text",
+                                            "description": "\n                            <div>Free text field to be used if no code is available<br clear=\"none\"/>\n                            </div>\n                        ",
+                                            "valueSets": "Free text",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "text"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "item",
+                            "minimumMultiplicity": "1",
+                            "maximumMultiplicity": "1",
+                            "mro": "M",
+                            "name": "event_date",
+                            "description": "\n                        <div>Date of the event.</div>\n                    ",
+                            "valueDomain": [
+                                {
+                                    "type": "datetime",
+                                    "property": [
+                                        {
+                                            "timeStampPrecision": "YMD"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "item",
+                            "minimumMultiplicity": "1",
+                            "maximumMultiplicity": "1",
+                            "mro": "M",
+                            "name": "date_recorded",
+                            "description": "\n                        <div>Date the event was recorded.</div>\n                    ",
+                            "valueDomain": [
+                                {
+                                    "type": "datetime",
+                                    "property": [
+                                        {
+                                            "timeStampPrecision": "YMD"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "group",
+                    "minimumMultiplicity": "1",
+                    "maximumMultiplicity": "1",
+                    "mro": "M",
+                    "name": "record",
+                    "description": "\n                    <div>A set of data items that are recorded together that have the same date, author and context.</div>\n                ",
+                    "concept": [
+                        {
+                            "type": "group",
+                            "minimumMultiplicity": "1",
+                            "maximumMultiplicity": "1",
+                            "mro": "M",
+                            "name": "author",
+                            "description": "\n                        <div>The person, professional or device recording the information in the record.</div>\n                    ",
+                            "concept": [
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "person",
+                                    "description": "\n                            <div>The person recording the information in the record.</div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "name",
+                                            "description": "The name of the person completing the record.",
+                                            "valueSets": "Free text.<br clear=\"none\"/>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "*",
+                                            "mro": "R",
+                                            "name": "relationship",
+                                            "description": "\n                        <p>The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.).</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for relationship.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available. </p>\n                        ",
+                                                    "valueSets": "\n                            <div>Free text</div>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "string",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "professional",
+                                    "description": "\n                            <div>The professional recording the information in the record. </div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "name",
+                                            "description": "The name of the professional.<br clear=\"none\"/>\n                    ",
+                                            "valueSets": "\n                        <div>Free text.<br clear=\"none\"/>\n                        </div>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string",
+                                                    "property": [
+                                                        {
+                                                            "maxLength": "70"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "role",
+                                            "description": "\n                        <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for role.</p>\n                        ",
+                                                    "valueSets": "<p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>"
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Free text</p>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "grade",
+                                            "description": "The grade of the professional.",
+                                            "valueSets": "Free text",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "specialty",
+                                            "description": "\n                        <p>The specialty of the professional e.g. physiotherapy, oncology, mental health, etc.</p>\n                    ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <p>The coded value for specialty.</p>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally mandated code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "\n                            <p>Free text field to be used if no code is available.</p>\n                        ",
+                                                    "valueSets": "\n                            <div>Free text</div>\n                        ",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "string",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "professional_identifier_type",
+                                            "description": "\n                        <p>The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council (NMC) numbers.</p>\n                    ",
+                                            "valueSets": "\n                        <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                    "
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "professional_identifier",
+                                            "description": "\n                        <p>Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation.</p>\n                    ",
+                                            "valueSets": "\n                        <p>Free text</p>\n                    ",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "organisation",
+                                            "description": "The name of the organisation the professional works for.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "\n                            <div>The coded value for organisation. </div>\n                        ",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code list(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "group",
+                                    "minimumMultiplicity": "0",
+                                    "maximumMultiplicity": "1",
+                                    "mro": "R",
+                                    "name": "device",
+                                    "description": "\n                            <div>The device <span style=\"color: #333333; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">recording the information in the record.</span></div>\n                        ",
+                                    "concept": [
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "device_type",
+                                            "description": "The device type. ",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for device type.",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available.",
+                                                    "valueSets": "Free text.",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "device_manufacturer",
+                                            "description": "Name of the device manufacturer.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for device manufacturer.",
+                                                    "valueSets": "\n                            <div>Nationally or internationally maintained code system(s) (see implementation guidance).</div>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "group",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "model",
+                                            "description": "The model of the device.",
+                                            "concept": [
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "coded_value",
+                                                    "description": "The coded value for model.",
+                                                    "valueSets": "\n                            <p>Nationally or internationally maintained code system(s) (see implementation guidance)</p>\n                        "
+                                                },
+                                                {
+                                                    "type": "item",
+                                                    "minimumMultiplicity": "0",
+                                                    "maximumMultiplicity": "1",
+                                                    "mro": "R",
+                                                    "name": "free_text",
+                                                    "description": "Free text field to be used if no code is available",
+                                                    "valueSets": "Free text",
+                                                    "valueDomain": [
+                                                        {
+                                                            "type": "text",
+                                                            "property": [
+                                                                {
+                                                                    "maxLength": "150"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "software_version",
+                                            "description": "The version of software running on the device.",
+                                            "valueSets": "Free text.",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "item",
+                                            "minimumMultiplicity": "0",
+                                            "maximumMultiplicity": "1",
+                                            "mro": "R",
+                                            "name": "unique_identifier",
+                                            "description": "The unique identifier for the device. ",
+                                            "valueSets": "Free text.",
+                                            "valueDomain": [
+                                                {
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "item",
+                            "minimumMultiplicity": "1",
+                            "maximumMultiplicity": "1",
+                            "mro": "M",
+                            "name": "date_recorded",
+                            "description": "\n                        <div>Date recorded.</div>\n                    ",
+                            "valueDomain": [
+                                {
+                                    "type": "datetime",
+                                    "property": [
+                                        {
+                                            "timeStampPrecision": "YMD"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
