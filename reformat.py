@@ -13,7 +13,7 @@ def save_obj_to_file(obj, save_path):
     with open(save_path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=4, ensure_ascii=False)
 
-def filter(node, implamentationGuidance: bool):
+def filter(node, implementationGuidance: bool):
     if isinstance(node, dict):
         retVal = {}
         for key in node:
@@ -37,11 +37,11 @@ def filter(node, implamentationGuidance: bool):
                     if node[key][0]['type'] != 'ordinal':
                         retVal[key] = copy(node[key])
             elif key == 'context':
-                if implamentationGuidance:
-                    retVal['implamentationGuidance'] = re.sub(r'(?<=release=)[a-z][0-9]*', '', html.unescape(node[key][0]['#text'])).replace('&amp;','&')
+                if implementationGuidance:
+                    retVal['implementationGuidance'] = re.sub(r'(?<=release=)[a-z][0-9]*', '', html.unescape(node[key][0]['#text'])).replace('&amp;','&')
             elif isinstance(node[key], dict) or isinstance(node[key], list):
                 if key not in ['relationship', 'implementation']:
-                    child = filter(node[key], implamentationGuidance)
+                    child = filter(node[key], implementationGuidance)
                     if child:
                         retVal[key] = child
             
@@ -57,7 +57,7 @@ def filter(node, implamentationGuidance: bool):
             if isinstance(entry, str):
                 retVal.append(entry)
             elif isinstance(entry, dict) or isinstance(entry, list):
-                child = filter(entry, implamentationGuidance)
+                child = filter(entry, implementationGuidance)
                 if child:
                     retVal.append(child)
         if retVal:
@@ -101,10 +101,10 @@ def main():
             data = json.load(f)
 
         # reformat
-        reformatted = filter(data, implamentationGuidance=True)
+        reformatted = filter(data, implementationGuidance=True)
         save_obj_to_file(reformatted, f'{save_dir}/{file_name}_reformatted.json')
 
-        reformatted = filter(data, implamentationGuidance=False)
+        reformatted = filter(data, implementationGuidance=False)
         save_obj_to_file(reformatted, f'{save_dir}/{file_name}_reformatted_no_implamentation_guidance.json')
 
 
